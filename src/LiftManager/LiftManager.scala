@@ -38,8 +38,8 @@ case class LiftManager() {
     var distanceOfClosetLift: Int = 0
     var closestLift: Lift = null
 
-    for (l <- lifts) {
-      if (!l.isMoving && l.equals(lifts.head) && l.direction.equals(floor.direction)) {
+    for (l <- lifts ) {
+      if (!l.isMoving && l.equals(lifts.head)) {
         distanceOfClosetLift = Math.abs(floor.floorNum - l.currFloNum)
       } else if (!l.isMoving && Math.abs(floor.floorNum - l.currFloNum) < distanceOfClosetLift) {
         distanceOfClosetLift = Math.abs(floor.floorNum - l.currFloNum)
